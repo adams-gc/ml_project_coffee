@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Recommendation System</title>
+</head>
+<body>
+    <h1>Coffee Recommendation System</h1>
+    <form id="recommendation-form">
+        <!-- Roast Level -->
+        <label for="roast_level">Roast Level:</label>
+        <select id="roast_level" name="roast_level" required>
+            <option value="light">Light</option>
+            <option value="medium">Medium</option>
+            <option value="dark">Dark</option>
+        </select>
+        <br>
+        
+        <!-- Acidity -->
+        <label for="acidity">Acidity:</label>
+        <select id="acidity" name="acidity" required>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+        <br>
+        
+        <!-- Drink Type -->
+        <label for="drink_type">Drink Type:</label>
+        <select id="drink_type" name="drink_type" required>
+            <option value="espresso">Espresso</option>
+            <option value="drip">Drip</option>
+            <option value="aeropress pourover">Aeropress Pourover</option>
+           <!-- <option value="latte">Latte</option> -->
+        </select>
+        <br>
+        
+        <!-- Ideal Cup Description -->
+        <label for="description">Ideal Cup Description:</label>
+        <select id="description" name="description" required>
+            <option value="nutty">Nutty</option>
+            <option value="fruity">Fruity</option>
+            <!--<option value="floral">Floral</option>-->
+            <option value="chocolatey">Chocolatey</option>
+        </select>
+        <br>
+        
+        <!-- Drink Time -->
+        <label for="drink_time">Drink Time:</label>
+        <select id="drink_time" name="drink_time" required>
+            <option value="morning">Morning</option>
+            <option value="afternoon">Afternoon</option>
+            <option value="evening">Evening</option>
+           <!-- <option value="night">Night</option>-->
+        </select>
+        <br>
+        
+        <!-- Strength -->
+        <label for="strength">Strength:</label>
+        <select id="strength" name="strength" required>
+            <option value="mild">Mild</option>
+            <option value="medium">Medium</option>
+            <option value="strong">Strong</option>
+        </select>
+        <br>
+        
+        <button type="submit">Get Recommendation</button>
+    </form>
+
+    <script>
+        document.getElementById('recommendation-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            const response = await fetch('/recommend', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+            
+            const result = await response.text();
+            document.body.innerHTML = result;
+        });
+    </script>
+</body>
+</html>

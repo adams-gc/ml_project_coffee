@@ -1,0 +1,11 @@
+Flavor,Roast Level,Acidity,Drink Type,Country,Health Benefit,Description,Video URL,Drink Time,Strength
+Fruity,Light,Medium,Drip,Ethiopia,Antioxidant-rich,Chocolatey,https://example.com/video1,Morning,Mild
+Nutty,Medium,Low,Espresso,Colombia,Energy Boost,Nutty,https://example.com/video2,Afternoon,Medium
+Chocolatey,Dark,High,Aeropress,Brazil,Mood Enhancer,Fruity,https://example.com/video3,Evening,Strong
+Earthy,Medium,Medium,Pourover,Kenya,Stress Relief,Earthy,https://example.com/video4,Morning,Medium
+Citrus,Light,Low,Drip,Costa Rica,Immunity Boost,Citrusy,https://example.com/video5,Afternoon,Mild
+Spicy,Dark,High,Espresso,Honduras,Digestive Aid,Spicy,https://example.com/video6,Evening,Strong
+Floral,Light,Medium,Aeropress,Yemen,Anti-inflammatory,Floral,https://example.com/video7,Morning,Mild
+Herbal,Medium,Low,Pourover,Peru,Focus Improvement,Herbal,https://example.com/video8,Afternoon,Medium
+Smoky,Dark,High,Drip,Guatemala,Detoxifying,Smoky,https://example.com/video9,Evening,Strong
+Bold,Medium,Medium,Espresso,Mexico,Metabolism Boost,Bold,https://example.com/video10,Morning,Medium

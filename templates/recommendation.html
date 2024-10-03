@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Recommended Coffee</title>
+</head>
+<body>
+    <h1>Your Recommended Coffee</h1>
+    <h2>{{ recommendation.Flavor }}</h2>
+    <p><strong>Roast Level:</strong> {{ recommendation['Roast Level'] }}</p>
+    <p><strong>Acidity:</strong> {{ recommendation.Acidity }}</p>
+    <p><strong>Drink Type:</strong> {{ recommendation['Drink Type'] }}</p>
+    <p><strong>Country:</strong> {{ recommendation.Country }}</p>
+    <p><strong>Health Benefit:</strong> {{ recommendation['Health Benefit'] }}</p>
+    <p><strong>Description:</strong> {{ recommendation.Description }}</p>
+    <p><strong>Video:</strong> <a href="{{ recommendation['Video URL'] }}" target="_blank">Watch Here</a></p>
+
+    <h3>Provide Feedback</h3>
+    <form method="POST" action="/feedback">
+        <input type="hidden" name="recommendation_id" value="{{ recommendation_id }}"> <!-- Hidden input for recommendation ID -->
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea>
+        <button type="submit">Submit Feedback</button>
+    </form>
+    
+    <a href="/">Go back</a>
+</body>
+</html>
